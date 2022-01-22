@@ -64,7 +64,7 @@ function desencriptar(texto) {
 
 function copiar() {
     var text = output1.value;
-    input1.value = text;
+    input1.value = text; // Falta atualizar para copiar pra clipboard
   }
 
 botao3.onclick = copiar;
