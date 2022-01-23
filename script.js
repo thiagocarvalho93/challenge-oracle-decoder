@@ -57,8 +57,14 @@ function desencriptar(texto) {
     msg = msg.replaceAll("ober","o");
     msg = msg.replaceAll("ufat","u");
 
-    output1.value = msg;
+    var texto_inteiro = ""
+
+    for(i=0;i<msg.length;i++) {
+        texto_inteiro = texto_inteiro + msg[i];
+        output1.value = texto_inteiro;
+    }
 }
+
 
     botao2.onclick = desencriptar;
 

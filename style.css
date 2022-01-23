@@ -32,12 +32,12 @@ body {
   padding: 20px;
   align-content: center;
   margin: 0 10px 0 10px;
-  background-color: rgb(43, 39, 39);
+  background: linear-gradient(#504b45 0%, #3c3b37 100%);
   border: 0;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   color: white;
   border-radius: 0.5em;
-  width: 30rem;
+  width: 80rem;
   height: auto;
 }
 
@@ -68,9 +68,10 @@ body {
   padding: 12px 20px;
   box-sizing: border-box;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  border: 2px solid #ccc;
+  border: 1px solid #ccc;
   border-radius: 4px;
   background-color: black;
+  font-family: monospace, Courier;
   color: white;
   resize: none;     
 }
