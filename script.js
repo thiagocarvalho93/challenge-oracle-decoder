@@ -12,28 +12,34 @@ input1.focus()
 var output1 = document.querySelector("#msg");
 var botao1 = document.querySelector("#btn-cripto");
 var botao2 = document.querySelector("#btn-descripto");
-var botao3 = document.querySelector("#btn-copy");
+var botao3 = document.querySelector("#btn-switch");
+var botao4 = document.querySelector("#btn-copy");
+
 
 function encriptar() {
     var text = input1.value;
     msg = "";
 
-    for(var i=0;i<text.length;i++){
-        if(text[i] == "e"){
-            msg = msg + "enter";
-        } else if(text[i] == "i"){
-            msg = msg + "imes";
-        } else if(text[i] == "a"){
-            msg = msg + "ai";
-        } else if(text[i] == "o"){
-            msg = msg + "ober";
-        } else if(text[i] == "u"){
-            msg = msg + "ufat";
-        } else {
-            msg = msg + text[i];
+    if(/^[a-z ,.!?;:()]+$/g.test(input1.value)){
+        for(var i=0;i<text.length;i++){
+            if(text[i] == "e"){
+                msg = msg + "enter";
+            } else if(text[i] == "i"){
+                msg = msg + "imes";
+            } else if(text[i] == "a"){
+                msg = msg + "ai";
+            } else if(text[i] == "o"){
+                msg = msg + "ober";
+            } else if(text[i] == "u"){
+                msg = msg + "ufat";
+            } else {
+                msg = msg + text[i];
+            }
         }
+        output1.value = msg;
+    } else {
+        output1.value = "Erro: apenas letras minúsculas e sem acento são aceitas."
     }
-    output1.value = msg;
 }
 
 botao1.onclick = encriptar;
@@ -57,20 +63,26 @@ function desencriptar(texto) {
     msg = msg.replaceAll("ober","o");
     msg = msg.replaceAll("ufat","u");
 
-    var texto_inteiro = ""
-
-    for(i=0;i<msg.length;i++) {
-        texto_inteiro = texto_inteiro + msg[i];
-        output1.value = texto_inteiro;
-    }
+    output1.value = msg;
 }
 
 
     botao2.onclick = desencriptar;
 
-function copiar() {
+function alternar() {
     var text = output1.value;
     input1.value = text; // Falta atualizar para copiar pra clipboard
   }
 
-botao3.onclick = copiar;
+botao3.onclick = alternar;
+
+function copiar() {
+    navigator.clipboard.writeText(output1.value).then(function() {
+        /* clipboard successfully set */
+      }, function() {
+        /* clipboard write failed */
+      });
+      
+}
+
+botao4.onclick = copiar;
