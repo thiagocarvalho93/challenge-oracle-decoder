@@ -15,7 +15,6 @@ var botao2 = document.querySelector("#btn-descripto");
 var botao3 = document.querySelector("#btn-switch");
 var botao4 = document.querySelector("#btn-copy");
 
-
 function encriptar() {
     var text = input1.value;
     msg = "";
@@ -71,7 +70,7 @@ function desencriptar(texto) {
 
 function alternar() {
     var text = output1.value;
-    input1.value = text; // Falta atualizar para copiar pra clipboard
+    input1.value = text;
   }
 
 botao3.onclick = alternar;
